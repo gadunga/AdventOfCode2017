@@ -30,14 +30,11 @@ pub mod d2
         let mut sum: i32 = 0;
 
         for s in data.lines(){
-            let mut a = 0;
-            let mut b = 0;
-
             let elements: Vec<i32> = s.split_whitespace().map(|s| s.parse().unwrap()).collect();
 
             for i in 0..elements.len() {
                 let mut found = false;
-                let mut j = i + 1;
+
                 for j in i+1..elements.len() {
                     let current = elements[j];
                     let high_value = std::cmp::max(elements[i], current);
