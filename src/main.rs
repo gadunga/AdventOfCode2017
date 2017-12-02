@@ -31,26 +31,38 @@ fn main() {
         Ok(_) => (),//print!("{} contains:\n{}", display, s),
     }
 
-    day1_problem1(s.as_str());
+    day1_problem2(s.as_str());
 }
 
+#[allow(dead_code)]
 fn day1_problem1(data: &str) {
     let mut sum: u32 = 0;
     
     for (i, c) in data.chars().enumerate() {
-        let mut curr: u32 = c.to_digit(10).unwrap();
-        let mut next: u32 = 0;
-
-        if i + 1 == data.len() {
-            next = data.chars().nth(0).unwrap().to_digit(10).unwrap();
-        } else {
-            next = data.chars().nth(i + 1).unwrap().to_digit(10).unwrap();
-        }
+        let curr: u32 = c.to_digit(10).unwrap();
+        let next: u32 = data.chars().nth((i + 1) % data.len()).unwrap().to_digit(10).unwrap();
 
         if curr == next {
             sum += curr;
         }
-        // do something with character `c` and index `i`
+    }
+
+    println!("Result = {}", sum);
+}
+
+#[allow(dead_code)]
+fn day1_problem2(data: &str) {
+    let mut sum: u32 = 0;
+    let step = data.len() / 2;
+    let len = data.len();
+    
+    for (i, c) in data.chars().enumerate() {
+        let curr: u32 = c.to_digit(10).unwrap();
+        let next: u32 = data.chars().nth((i + step) % len).unwrap().to_digit(10).unwrap();
+
+        if curr == next {
+            sum += curr;
+        }
     }
 
     println!("Result = {}", sum);
