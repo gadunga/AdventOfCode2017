@@ -4,7 +4,7 @@ use std::fs::File;
 use std::io::prelude::*;
 use std::path::Path;
 
-mod d3;
+mod d4;
 
 fn main() {
     let args: Vec<String> = env::args().collect();
@@ -33,5 +33,6 @@ fn main() {
         Ok(_) => (),//print!("{} contains:\n{}", display, s),
     }
 
-    d3::d3::day3_problem2(265149);
+    //d3::d3::day3_problem2(265149);
+    d4::d4::day4_problem2(s.as_str());
 }
