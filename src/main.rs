@@ -4,7 +4,7 @@ use std::fs::File;
 use std::io::prelude::*;
 use std::path::Path;
 
-mod d6;
+mod d7;
 
 fn main() {
     let args: Vec<String> = env::args().collect();
@@ -34,5 +34,5 @@ fn main() {
     }
 
     //d3::d3::day3_problem2(265149);
-    d6::d6::day6_problem2(s.as_str());
+    d7::day7_problem2(s.as_str());
 }

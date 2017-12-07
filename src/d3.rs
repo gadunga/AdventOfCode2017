@@ -1,8 +1,5 @@
 pub mod d3
 {
-    /*For example, if x=(a,b)x=(a,b) and y=(c,d)y=(c,d), the Manhattan distance between xx and yy is
-
-|a−c|+|b−d||a−c|+|b−d|. */
     #[derive(Debug)]
     struct Point {
         x: i32,
