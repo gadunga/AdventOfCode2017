@@ -1,11 +1,3 @@
-/*
-Generator A starts with 699
-Generator B starts with 124
-Factors:
-generator A uses 16807
-generator B uses 48271
- */
-
 #[allow(dead_code)]
 pub fn problem1() {
     let mut a = 699;
